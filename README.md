@@ -14,7 +14,7 @@ var myVariable; //没有块级作用域
 ```javascript
 //花括号包裹的地方视为一块区域，使用let声明则外部无法读取，也叫局部变量。
 {
-	let b = 3
+    let b = 3
     var a = 4
 }
 console.log(b) //无法反问
@@ -73,6 +73,19 @@ if (iceCream === 'chocolate') {
 
 `if ( ... )` 中的表达式进行测试，用（上文所提到的）等于运算符来比较变量 `iceCream` 与字符串 `'chocolate'` 是否相等。如果返回 `true`，则运行第一个代码块；如果返回 `false`，则跳过第一块直接运行 `else` 之后的第二个代码块。
 
+## 循环语句
+
+```JavaScript
+for (初始化器; 退出条件; 最终条件) {
+  //循环体-重复执行的代码块
+}
+```
+
+1. 在括号内，我们有三个项目，以分号分隔：
+   1. 一个**初始化器** - 这通常是一个设置为一个数字的变量，它被递增来计算循环运行的次数。它也有时被称为**计数变量**。
+   2. 一个**退出条件** - 如前面提到的，这个定义循环何时停止循环。这通常是一个表现为比较运算符的表达式，用于查看退出条件是否已满足的测试。
+   3. 一个**最终条件** - 这总是被判断（或运行），每个循环已经通过一个完整的迭代消失时间。它通常用于增加（或在某些情况下递减）计数器变量，使其更接近退出条件值。
+
 ## 函数
 
 **函数**用来封装可复用的功能。如果没有函数，一段特定的操作过程用几次就要重复写几次，而使用函数则只需写下函数名和一些简短的信息。
@@ -92,6 +105,8 @@ function (){
 
 ## 对象
 
+![](./img/object.png)
+
 在 JavaScript 中，几乎所有的对象都是 `Object` 类型的实例
 
 ```javascript
@@ -99,10 +114,62 @@ function (){
 let o = new Object();
 //声明对象
 let o  = {
-    name:'我的名字',
-    age:65,
+    name:'王大锤',
+    age:20,
+    height:175,
+    guitar:function(song){
+         console.log('弹一首：'+song)
+    },
+    sing:function(song){
+         console.log('给老板演唱一首：'+song)
+    },
+    dance:function(dance){
+         console.log('跳一段：'+dance)
+    }
 }
+//老板：王大锤给我来首月亮放的罪
+//王大锤：好的
+o.sing('月亮放的罪')//给老板演唱一首：月亮放的罪
 ```
+
+## 数组
+
+![](./img/arr.png)
+
+数组由方括号构成，其中包含用逗号分隔的元素列表。
+
+1、假设我们想在一个数组中存储一个购物清单 - 我们会做一些像下面这样的事情。在您的控制台中输入以
+
+```javascript
+let shopping = ['芒果', '电视', '茄子', '西瓜', '马桶刷'];
+shopping;
+```
+
+## DOM
+
+![](./img/dom.png)
+
+**`DOM` 中核心接口**
+
+- `document.getElementById(id)`    根据节点`ID`获取节点**元素**`element`
+- `document.querySelector('html')`可以是`ID`也可以是**类名**
+- `document.getElementsByTagName(name)`    根据节点`name`获取节点**列表**`nodeList`
+- `document.createElement(name)`     创建一个节点（节点名称）`div`   `span` `ul`  `li` 等等...
+- `parentNode.appendChild(node)`    向节点中插入一个子节点-（节点**元素**）`element`
+- `element.innerHTML`   向节点中插入一段`html`文本
+- `element.style.left`    设置元素`style`样式中的`left`属性值
+- `element.setAttribute(name, value)`  设置元素属性与值
+- `element.getAttribute(name)`  获取**元素**属性**值**
+- `element.addEventListener(事件的名称, 事件触发回调, 其他配置)`  事件绑定函数-
+- `window.onload`  页面加载后执行
+
+```javascript
+let elementDiv = document.getElementById('div')
+elementDiv.innerHTML = '<h1>吧H1插入到div中</h1>'
+```
+
+
+
 
 ## 事件
 
@@ -120,3 +187,38 @@ document.querySelector('html').onclick = function() {
 - 鼠标经过
 - 键盘按下
 - 等等...
+
+## 内置对象
+
+- `Math`
+- `Array`
+- `Date`
+- 等等...
+
+**举例**：`Math`
+
+> **`Math`** 是一个内置对象，它拥有一些数学常数属性和数学函数方法。`Math` 不是一个函数对象。
+
+**`Math`**中的方法：**`Math.random()`**
+
+**`Math.random()`** 函数返回一个浮点数， 伪随机数在范围从**0 到**小于**1**，也就是说，从 0（包括 0）往上，但是不包括 1（排除 1），然后您可以缩放到所需的范围。实现将初始种子选择到随机数生成算法;它不能被用户选择或重置。
+
+```javascript
+console.log(Math.random()) //0.19614555327546457
+```
+
+**`Math`**中的方法：**`Math.floor()`**
+
+```javascript
+Math.floor( 45.95);
+// 45
+Math.floor( 45.05);
+// 45
+Math.floor( 4 );
+// 4
+Math.floor(-45.05);
+// -46
+Math.floor(-45.95);
+// -46
+```
+
