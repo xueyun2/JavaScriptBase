@@ -141,27 +141,39 @@ o.sing('月亮放的罪')//给老板演唱一首：月亮放的罪
 1、假设我们想在一个数组中存储一个购物清单 - 我们会做一些像下面这样的事情。在您的控制台中输入以
 
 ```javascript
-let shopping = ['芒果', '电视', '茄子', '西瓜', '马桶刷'];
+let shopping = ['芒果', '电视', '茄子', '西瓜'];
 shopping;
 ```
 
 ## DOM
 
-![](./img/dom.png)
+文档对象模型 (DOM) 是 `HTML` 和` XML `文档的编程接口。它提供了对文档的结构化的表述，并定义了一种方式可以使从程序中对该结构进行访问，从而改变文档的结构，样式和内容。DOM 将文档解析为一个由节点和对象（包含属性和方法的对象）组成的结构集合。简言之，它会将 web 页面和脚本或程序语言连接起来。
 
 **`DOM` 中核心接口**
 
 - `document.getElementById(id)`    根据节点`ID`获取节点**元素**`element`
+
 - `document.querySelector('html')`可以是`ID`也可以是**类名**
+
 - `document.getElementsByTagName(name)`    根据节点`name`获取节点**列表**`nodeList`
+
 - `document.createElement(name)`     创建一个节点（节点名称）`div`   `span` `ul`  `li` 等等...
+
 - `parentNode.appendChild(node)`    向节点中插入一个子节点-（节点**元素**）`element`
+
 - `element.innerHTML`   向节点中插入一段`html`文本
+
 - `element.style.left`    设置元素`style`样式中的`left`属性值
+
 - `element.setAttribute(name, value)`  设置元素属性与值
+
 - `element.getAttribute(name)`  获取**元素**属性**值**
+
 - `element.addEventListener(事件的名称, 事件触发回调, 其他配置)`  事件绑定函数-
+
 - `window.onload`  页面加载后执行
+
+**获取页面上DOM元素**
 
 ```javascript
 let elementDiv = document.getElementById('div')
