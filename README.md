@@ -221,6 +221,8 @@ console.log(Math.random()) //0.19614555327546457
 
 **`Math`**中的方法：**`Math.floor()`**
 
+向下取整
+
 ```javascript
 Math.floor( 45.95);
 // 45
