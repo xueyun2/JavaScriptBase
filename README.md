@@ -234,3 +234,4 @@ Math.floor(-45.95);
 // -46
 ```
 
+原文：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript
