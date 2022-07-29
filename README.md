@@ -73,6 +73,34 @@ if (iceCream === 'chocolate') {
 
 `if ( ... )` 中的表达式进行测试，用（上文所提到的）等于运算符来比较变量 `iceCream` 与字符串 `'chocolate'` 是否相等。如果返回 `true`，则运行第一个代码块；如果返回 `false`，则跳过第一块直接运行 `else` 之后的第二个代码块。
 
+**switch语句**
+
+当`key`值与`case`中的值匹配则执行下方子语句，直到语句执行完成或者遇到`break`停止。
+
+> 如果没有`break`语句后方的匹配则失效继续执行下方代码
+
+```JavaScript
+switch (key) {
+    case '小猫':
+		//当key值与case中的值匹配则执行下方子语句，直到遇到break停止。
+         console.log('key值与小猫相匹配')
+        break;
+    case '小狗':
+        
+        console.log('key值与小狗相匹配')
+        break;
+    case '小鱼':
+  
+        console.log('key值与小鱼相匹配')
+        break;
+    default: //default上方没有匹配的语句则执行default中的子语句
+        console.log('上方谁都不匹配')
+        break;
+}
+```
+
+
+
 ## 循环语句
 
 ```JavaScript
